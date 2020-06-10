@@ -17,6 +17,7 @@ namespace MediaServices
             ConfigWrapper config = new ConfigWrapper(new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+                .AddUserSecrets<Program>()
                 .AddEnvironmentVariables()
                 .Build());
 
